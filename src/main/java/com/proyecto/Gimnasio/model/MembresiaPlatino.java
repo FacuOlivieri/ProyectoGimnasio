@@ -1,4 +1,18 @@
 package com.proyecto.Gimnasio.model;
 
-public class MembresiaPlatino {
+import jakarta.persistence.Entity;
+import lombok.*;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+public class MembresiaPlatino extends Membresia{
+
+    @Override
+    public Double calcularDescuento() {
+        return 0.0;
+    }
 }

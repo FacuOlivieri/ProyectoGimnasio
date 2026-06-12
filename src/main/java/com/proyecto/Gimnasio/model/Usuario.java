@@ -18,6 +18,7 @@ public abstract class Usuario {
     protected Long idUsuario;
     protected String nombre;
     protected String apellido;
+    protected Integer edad;
     protected String email;
     protected String telefono;
     protected String direccion;

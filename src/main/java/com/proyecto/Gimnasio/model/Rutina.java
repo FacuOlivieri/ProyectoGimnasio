@@ -1,6 +1,6 @@
 package com.proyecto.Gimnasio.model;
 
-import com.proyecto.Gimnasio.enums.Dias;
+import com.proyecto.Gimnasio.model.Dias;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,5 +21,6 @@ public class Rutina {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idRutina;
     private List<Dias> dias;
+    private String descripcionRutina;
 
 }

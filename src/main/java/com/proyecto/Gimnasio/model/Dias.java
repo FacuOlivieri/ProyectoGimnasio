@@ -1,7 +1,9 @@
 package com.proyecto.Gimnasio.model;
 
-public class Dia {
+import com.proyecto.Gimnasio.enums.Dia;
 
-    private Integer dia;
-    private String nombre;
+public class Dias {
+
+    private Integer idDia;
+    private Dia dia;
 }

@@ -13,6 +13,8 @@ import java.util.List;
 @Builder
 public class Entrenador extends Usuario{
 
+
     private Long idEntrenador;
     private List<Rutina> rutinasCreadas;
+    private Double salario;
 }
