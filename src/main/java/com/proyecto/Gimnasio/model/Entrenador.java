@@ -1,20 +1,22 @@
 package com.proyecto.Gimnasio.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
-
+import lombok.experimental.SuperBuilder;
 import java.util.List;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@DiscriminatorValue("ENTRENADOR") // Valor en la columna tipo_usuario
 @Getter
 @Setter
-@Builder
-public class Entrenador extends Usuario{
+@AllArgsConstructor
+@NoArgsConstructor
+@SuperBuilder // CAMBIO: SuperBuilder habilitado
+public class Entrenador extends Usuario {
 
+    // Se elimina 'idEntrenador', usa 'idUsuario' heredado automáticamente
 
-    private Long idEntrenador;
+    @OneToMany(mappedBy = "entrenador", cascade = CascadeType.ALL)
     private List<Rutina> rutinasCreadas;
     private Double salario;
 }
