@@ -1,0 +1,39 @@
+/* Estilos generales para el fondo */
+body {
+    background-color: #111827; /* Gris oscuro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Contenedor del formulario */
+.login-card {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Detalles temáticos del Gimnasio (Naranja) */
+.gym-brand {
+    color: #f97316; /* Naranja enérgico */
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.btn-gym {
+    background-color: #f97316;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.btn-gym:hover {
+    background-color: #ea580c;
+}

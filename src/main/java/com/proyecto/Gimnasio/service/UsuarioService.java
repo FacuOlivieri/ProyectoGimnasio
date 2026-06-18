@@ -7,13 +7,26 @@ import com.proyecto.Gimnasio.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.security.auth.login.LoginException;
 import java.util.List;
 
 @Service
 public class UsuarioService implements IUsuarioService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository; // Corregido el nombre para evitar confusión
+    private UsuarioRepository usuarioRepository;
+
+    @Override
+    public boolean login(String emailIngresado, String passwordIngresada) throws LoginException {
+        UsuarioDTO usuarioEncontrado =  Mapper.mapToUsuarioDto(usuarioRepository.findByEmail(emailIngresado));
+
+        if (usuarioEncontrado == null || !usuarioEncontrado.getPassword().equals(passwordIngresada)){
+            throw new LoginException("Usuario o Password incorrecto");
+        }
+
+        return true;
+    }
+
 
     @Override
     public UsuarioDTO crearUsuario(UsuarioDTO usuarioACrear) {
@@ -82,6 +95,13 @@ public class UsuarioService implements IUsuarioService {
     public UsuarioDTO encontrarUsuario(Long idUsuario) {
         return null;
     }
+
+    @Override
+    public UsuarioDTO encontrarUsuarioPorEmail(String emailIngresado) {
+        return Mapper.mapToUsuarioDto(usuarioRepository.findByEmail(emailIngresado));
+    }
+
+
 }
 
 
