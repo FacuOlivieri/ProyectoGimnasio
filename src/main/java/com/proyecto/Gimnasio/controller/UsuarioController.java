@@ -24,7 +24,7 @@ public class UsuarioController {
         return "login";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/procesarLogin")
     public String login(@PathVariable String emailIngresado,
                         String passwordIngresada,
                         Model model) throws LoginException {
