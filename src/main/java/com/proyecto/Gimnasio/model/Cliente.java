@@ -1,8 +1,6 @@
 package com.proyecto.Gimnasio.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -28,6 +26,7 @@ public class Cliente extends Usuario{
     @JoinColumn(name = "id_membresia")
     private Membresia membresia;
 
+    @ManyToMany
     private List<Asistencia> asistencias;
 
 }

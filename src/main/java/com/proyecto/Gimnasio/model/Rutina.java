@@ -1,10 +1,8 @@
 package com.proyecto.Gimnasio.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.proyecto.Gimnasio.model.Dias;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
@@ -20,7 +18,21 @@ public class Rutina {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idRutina;
-    private List<Dias> dias;
     private String descripcionRutina;
+    private String rutaImagenRutina;
+
+    @ManyToMany
+    private List<Dias> dias;
+
+
+    @ManyToMany
     private List <Ejercicio> ejercicios;
+
+    @ManyToOne
+    @JoinColumn(name = "idCliente")
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "idEntrenador")
+    private Entrenador entrenadorCreador;
 }

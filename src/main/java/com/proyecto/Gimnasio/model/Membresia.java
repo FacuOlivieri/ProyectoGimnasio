@@ -1,7 +1,7 @@
 package com.proyecto.Gimnasio.model;
 
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -15,6 +15,8 @@ import java.util.List;
 @SuperBuilder
 public abstract class Membresia {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long idMembresia;
     protected Double precioMembresia;
     protected Integer diasHabilitados;
@@ -22,6 +24,7 @@ public abstract class Membresia {
     protected LocalDate diaInicio;
     protected LocalDate diaCaducidad;
 
+    @OneToMany(mappedBy = "membresia", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     protected List<Cliente> clientesAsociados;
 
     public abstract Double calcularDescuento();

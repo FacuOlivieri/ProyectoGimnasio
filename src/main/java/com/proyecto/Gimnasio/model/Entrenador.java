@@ -13,9 +13,12 @@ import java.util.List;
 @SuperBuilder
 public class Entrenador extends Usuario {
 
-    // Se elimina 'idEntrenador', usa 'idUsuario' heredado automáticamente
 
-    @OneToMany(mappedBy = "entrenador", cascade = CascadeType.ALL)
+    //Poner un id incrementable?
+    private Long idEntrenador;
+
+    @OneToMany(mappedBy = "entrenadorCreador", cascade = CascadeType.ALL)
     private List<Rutina> rutinasCreadas;
     private Double salario;
+
 }
