@@ -1,0 +1,18 @@
+/* ESTILOS DEL FOOTER COMPARTIDO */
+.gym-footer {
+    background-color: #0f172a;
+    border-top: 1px solid #334155;
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+    width: 100%;
+    position: relative;
+    margin-top: auto; /* Empuja el footer al fondo si hay poco contenido */
+    box-sizing: border-box;
+}
+
+.gym-footer a {
+    color: #f97316;
+    text-decoration: none;
+}

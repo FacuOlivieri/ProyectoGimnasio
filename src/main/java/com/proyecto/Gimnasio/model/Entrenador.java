@@ -9,9 +9,8 @@ import java.util.List;
 @DiscriminatorValue("ENTRENADOR") // Valor en la columna tipo_usuario
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@SuperBuilder // CAMBIO: SuperBuilder habilitado
+@SuperBuilder
 public class Entrenador extends Usuario {
 
     // Se elimina 'idEntrenador', usa 'idUsuario' heredado automáticamente

@@ -1,3 +1,4 @@
+
 package com.proyecto.Gimnasio.model;
 
 import jakarta.persistence.Entity;

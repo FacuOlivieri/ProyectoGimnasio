@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymFit | Panel de Administración</title>
+
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/dashboard-admin.css}"> </head>
+<body class="bg-dark">
+
+<div th:replace="~{layout-comun :: header-compartido}"></div>
+
+<main class="dashboard-container">
+
+  <div class="welcome-title">
+    <h1>Panel de Administración</h1>
+    <p>Gestioná los accesos, usuarios y configuraciones del complejo deportivo.</p>
+  </div>
+
+  <div class="admin-menu-grid">
+
+    <div class="menu-card">
+      <div>
+        <h3>Crear Usuario</h3>
+        <p>Registrá de forma directa nuevos socios, entrenadores o personal administrativo.</p>
+      </div>
+      <a th:href="@{/registro}" class="btn-gym btn-dashboard">Acceder</a>
+    </div>
+
+    <div class="menu-card">
+      <div>
+        <h3>Administrar Usuarios</h3>
+        <p>Modificá perfiles, gestioná estados de membresías y eliminá cuentas del sistema.</p>
+      </div>
+      <a th:href="@{/admin/usuarios}" class="btn-gym btn-dashboard">Gestionar</a>
+    </div>
+
+    <div class="menu-card">
+      <div>
+        <h3>Administrar Gimnasio</h3>
+        <p>Configurá disciplinas, horarios de clases grupales, cupos y listado de sedes.</p>
+      </div>
+      <a th:href="@{/admin/gimnasio}" class="btn-gym btn-dashboard">Configurar</a>
+    </div>
+
+  </div>
+
+</main>
+
+<div th:replace="~{layout-comun :: footer-compartido}"></div>
+
+</body>
+</html>

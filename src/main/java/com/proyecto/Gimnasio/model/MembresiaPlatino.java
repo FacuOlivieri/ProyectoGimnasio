@@ -1,14 +1,14 @@
+
 package com.proyecto.Gimnasio.model;
 
 import jakarta.persistence.Entity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 public class MembresiaPlatino extends Membresia{
 
     @Override

@@ -9,7 +9,6 @@ import lombok.experimental.SuperBuilder;
 @DiscriminatorValue("RECEPCIONISTA")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
 public class Recepcionista extends Usuario {

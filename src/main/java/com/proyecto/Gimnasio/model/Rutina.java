@@ -22,5 +22,5 @@ public class Rutina {
     private Long idRutina;
     private List<Dias> dias;
     private String descripcionRutina;
-
+    private List <Ejercicio> ejercicios;
 }

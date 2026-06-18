@@ -1,0 +1,84 @@
+/* ESTILOS ESPECÍFICOS DEL DASHBOARD ADMINISTRADOR */
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px; /* Evita que el header fijo tape el contenido */
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1000px; /* Un poco más ancho para albergar bien las tarjetas */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.welcome-title {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.welcome-title h1 {
+    font-size: 2.2rem;
+    color: #f8fafc;
+    font-weight: 800;
+}
+
+.welcome-title p {
+    color: #94a3b8;
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+/* Grilla con diseño adaptativo para los botones del menú */
+.admin-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Tarjetas contenedoras de opciones */
+.menu-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    border-color: #f97316;
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.1), 0 4px 6px -2px rgba(249, 115, 22, 0.05);
+}
+
+.menu-card h3 {
+    color: #f8fafc;
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.menu-card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Ajuste fino para el botón estirado dentro del menu-card */
+.btn-dashboard {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}

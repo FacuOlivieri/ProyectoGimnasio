@@ -18,7 +18,6 @@ import jakarta.persistence.InheritanceType;
 @DiscriminatorColumn(name = "tipo_usuario", discriminatorType = DiscriminatorType.STRING)
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder // CAMBIO: SuperBuilder en lugar de Builder para permitir herencia
 public abstract class Usuario {
