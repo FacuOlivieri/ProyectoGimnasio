@@ -1,39 +1,146 @@
-/* Estilos generales para el fondo */
-body {
-    background-color: #111827; /* Gris oscuro */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ==========================================================================
+   Estilos Generales y Reset (Tema Claro)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.container-registro {
+body {
+    background-color: #f3f4f6; /* Fondo gris muy claro y limpio */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1f2937; /* Texto principal oscuro para excelente legibilidad */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1.5rem;
+}
+
+/* ==========================================================================
+   Contenedor Principal
+   ========================================================================== */
+.container-registro {
     width: 100%;
+    max-width: 420px; /* Tamaño ideal para un formulario de login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Contenedor del formulario */
+/* ==========================================================================
+   La Tarjeta del Formulario (El cambio clave)
+   ========================================================================== */
 .login-card {
-    background-color: #1f2937;
-    border: 1px solid #374151;
-    border-radius: 1rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff; /* Fondo puramente blanco */
+    border: 1px solid #e5e7eb; /* Borde sutil gris claro */
+    border-radius: 1.25rem; /* Esquinas notablemente redondeadas y modernas */
+    padding: 2.5rem 2.25rem;
+    width: 100%;
+    /* Sombra suave y realista para dar profundidad sobre el fondo claro */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05),
+                0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
 
-/* Detalles temáticos del Gimnasio (Naranja) */
+/* Subtítulo o texto de bienvenida dentro de la tarjeta */
+.login-card p {
+    color: #4b5563; /* Gris intermedio */
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Identidad (Brand)
+   ========================================================================== */
 .gym-brand {
-    color: #f97316; /* Naranja enérgico */
+    color: #f97316; /* Tu naranja enérgico resalta mucho más aquí */
     font-weight: 800;
+    font-size: 2rem;
     letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
+/* ==========================================================================
+   Mejora para los Inputs (Campos de texto)
+   ========================================================================== */
+/* Nota: Asegúrate de que tus <label> e <input> tengan clases o estilos coherentes */
+.login-card label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.login-card input[type="text"],
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    color: #111827;
+    transition: all 0.2s;
+}
+
+/* Efecto cuando el usuario hace clic para escribir */
+.login-card input:focus {
+    outline: none;
+    border-color: #f97316; /* El borde se vuelve naranja */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1); /* Brillo naranja sutil */
+}
+
+/* ==========================================================================
+   Botón Naranja Premium
+   ========================================================================== */
 .btn-gym {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
     background-color: #f97316;
-    color: white;
-    font-weight: bold;
+    color: #ffffff;
+    font-weight: 700;
     text-transform: uppercase;
-    transition: background-color 0.2s;
+    letter-spacing: 0.05em;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.2);
+    transition: all 0.2s ease;
+    margin-bottom: 1.5rem;
 }
 
 .btn-gym:hover {
     background-color: #ea580c;
+    box-shadow: 0 10px 15px -3px rgba(234, 88, 12, 0.3);
+}
+
+/* ==========================================================================
+   Enlace inferior "¿Sos nuevo? Crear cuenta"
+   ========================================================================== */
+.login-card a {
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.login-card a:hover {
+    color: #ea580c;
+    text-decoration: underline;
+}
+
+.text-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
 }
