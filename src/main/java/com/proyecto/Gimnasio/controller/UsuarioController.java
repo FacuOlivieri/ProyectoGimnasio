@@ -21,7 +21,12 @@ public class UsuarioController {
 
     @GetMapping("/login")
     public String login(){
-        return "login";
+        return "index";
+    }
+
+    @GetMapping("/crearCuenta")
+    public String crearCuenta(){
+        return "registro";
     }
 
     @PostMapping("/procesarLogin")
