@@ -1,18 +1,29 @@
-/* ESTILOS DEL FOOTER COMPARTIDO */
+/* ESTILOS DEL FOOTER CON LINKS */
 .gym-footer {
     background-color: #0f172a;
     border-top: 1px solid #334155;
-    padding: 20px;
-    text-align: center;
+    padding: 25px 20px;
     color: #64748b;
     font-size: 0.85rem;
     width: 100%;
-    position: relative;
-    margin-top: auto; /* Empuja el footer al fondo si hay poco contenido */
+    margin-top: auto;
     box-sizing: border-box;
 }
 
-.gym-footer a {
-    color: #f97316;
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links th\:block, .footer-links a {
+    color: #94a3b8;
     text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #f97316;
 }

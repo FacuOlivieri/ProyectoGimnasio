@@ -1,7 +1,7 @@
-/* ESTILOS DEL HEADER COMPARTIDO */
+/* ESTILOS DEL HEADER MIGRADO */
 .gym-header {
-    background-color: #1e293b; /* Gris oscuro azulado igual al form-card */
-    border-bottom: 2px solid #f97316; /* Línea naranja Gym */
+    background-color: #1e293b;
+    border-bottom: 2px solid #f97316;
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;

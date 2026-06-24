@@ -2,13 +2,11 @@ package com.proyecto.Gimnasio.controller;
 
 import com.proyecto.Gimnasio.dto.UsuarioDTO;
 import com.proyecto.Gimnasio.service.UsuarioService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.security.auth.login.LoginException;
 
@@ -29,18 +27,29 @@ public class UsuarioController {
         return "registro";
     }
 
-    @PostMapping("/procesarLogin")
-    public String login(@PathVariable String emailIngresado,
-                        String passwordIngresada,
+    @PostMapping("/login")
+    public String login(@RequestParam String emailIngresado,
+                        @RequestParam String passwordIngresada,
+                        HttpSession session,
                         Model model) throws LoginException {
 
-        if (usuarioService.login(emailIngresado, passwordIngresada)){
-            UsuarioDTO usuario = usuarioService.encontrarUsuarioPorEmail(emailIngresado);
-            model.addAttribute("usuario", usuario);
-            return "home";
+
+
+        //Validar usuario
+        if (!usuarioService.encontrarMailDelUsuario(emailIngresado) ||
+                !usuarioService.validarPassword(emailIngresado, passwordIngresada) ) {
+            model.addAttribute("credencialesIncorrectas", "Usuario o Contrasenia incorrecta");
+            return "redirect:/login";
         }
 
-        return "login";
+
+
+        UsuarioDTO usuario = usuarioService.encontrarUsuarioPorEmail(emailIngresado);
+        session.setAttribute("usuario", usuario);
+        model.addAttribute("nombreUsuario", usuario.getNombre());
+
+
+        return "redirect:/home";
     }
 
 
@@ -53,4 +62,23 @@ public class UsuarioController {
         return "login";
     }
 
+
+
+    @GetMapping("/home")
+    public String home(HttpSession session){
+        UsuarioDTO usuario = (UsuarioDTO) session.getAttribute("usuario");
+
+        if(usuario == null){
+            return "redirect:/login";
+        }
+
+        return "home";
+    }
+
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/login";
+    }
 }

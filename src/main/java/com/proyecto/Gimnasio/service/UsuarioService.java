@@ -27,6 +27,21 @@ public class UsuarioService implements IUsuarioService {
         return true;
     }
 
+    @Override
+    public boolean encontrarMailDelUsuario(String emailIngresado) {
+        return usuarioRepository.findByEmail(emailIngresado) != null;
+    }
+
+    @Override
+    public boolean validarPassword(String emailIngresado, String passwordIngresada) {
+        Usuario usuario = usuarioRepository.findByEmail(emailIngresado);
+        if (usuario.getPassword().equals(passwordIngresada)){
+            return true;
+        } else  {
+            return false;
+        }
+    }
+
 
     @Override
     public UsuarioDTO crearUsuario(UsuarioDTO usuarioACrear) {

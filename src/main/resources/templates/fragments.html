@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head></head>
+<body>
+
+<header th:fragment="header" class="gym-header">
+    <a th:href="@{/home}" class="header-brand">GYMFIT</a>
+
+    <div class="header-user">
+            <span class="user-welcome">
+                Bienvenido, <span class="user-name" th:text="${session.usuario.nombre}">Usuario</span>
+            </span>
+        <form th:action="@{/logout}" method="GET" style="display: inline;">
+            <button type="submit" class="btn-logout">Salir</button>
+        </form>
+    </div>
+</header>
+
+
+<footer th:fragment="footer" class="gym-footer">
+    <div class="footer-content">
+        <p>© 2026 GymFit Pro. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Acerca de</a> |
+            <a href="#">Soporte</a> |
+            <a href="#">Términos y Condiciones</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

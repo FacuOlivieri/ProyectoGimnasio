@@ -17,4 +17,6 @@ public interface IUsuarioService {
     boolean login(String username, String password) throws LoginException;
 
 
+    boolean encontrarMailDelUsuario(String emailIngresado);
+    boolean validarPassword(String emailIngresado, String passwordIngresada);
 }
