@@ -1,0 +1,123 @@
+/* ESTILOS EN ESPAÑOL PARA EL REGISTRO */
+body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.contenedor-registro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tarjeta-formulario {
+    background-color: #1e293b;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 650px;
+    border: 1px solid #334155;
+}
+
+.encabezado-formulario {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.marca-gimnasio {
+    color: #f97316;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.encabezado-formulario p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.cuadricula-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-formulario label {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.grupo-formulario input {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    padding: 12px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.grupo-formulario input:focus {
+    border-color: #f97316;
+    outline: none;
+    box-shadow: 0 0 8px rgba(249, 115, 22, 0.25);
+}
+
+.columna-completa {
+    grid-column: span 2;
+}
+
+.boton-gimnasio {
+    width: 100%;
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-gimnasio:hover {
+    background-color: #ea580c;
+}
+
+.pie-formulario {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.pie-formulario a {
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .cuadricula-formulario {
+        grid-template-columns: 1fr;
+    }
+    .columna-completa {
+        grid-column: span 1;
+    }
+}

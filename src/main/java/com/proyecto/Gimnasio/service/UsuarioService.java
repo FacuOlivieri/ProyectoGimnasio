@@ -45,8 +45,9 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDTO crearUsuario(UsuarioDTO usuarioACrear) {
-        Usuario usuarioEntidad;
+        Usuario usuarioEntidad = new Cliente();
 
+        /*
         // 1. Instanciamos la clase hija correspondiente según el rol
         switch (usuarioACrear.getRol().toUpperCase()) {
             case "CLIENTE":
@@ -65,7 +66,7 @@ public class UsuarioService implements IUsuarioService {
             default:
                 throw new IllegalArgumentException("El rol especificado no es válido");
         }
-
+        */
 
         usuarioEntidad.setNombre(usuarioACrear.getNombre());
         usuarioEntidad.setApellido(usuarioACrear.getApellido());

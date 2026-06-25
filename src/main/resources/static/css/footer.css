@@ -17,11 +17,15 @@
     gap: 10px;
 }
 
-.footer-links th\:block, .footer-links a {
+.footer-links a {
     color: #94a3b8;
     text-decoration: none;
     margin: 0 5px;
     transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #f97316;
 }
 
 .footer-links a:hover {

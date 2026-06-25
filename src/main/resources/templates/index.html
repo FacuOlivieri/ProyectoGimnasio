@@ -15,15 +15,18 @@
 
         <form>
             <label>Nombre de Usuario o Email</label>
-            <input type="text" placeholder="ejemplo123">
+            <input type="text">
 
             <label>Contraseña</label>
-            <input type="password" placeholder="••••••••">
+            <input type="password">
 
             <button type="submit" class="btn-gym">Ingresar</button>
 
             <div class="text-footer">
-                ¿Sos nuevo? <a th:href="@{/crearCuenta}">Crear una cuenta</a>
+                <p>
+                    ¿No tienes cuenta?
+                    <a th:href="@{/crearCuenta}">Crea una cuenta aquí</a>
+                </p>
             </div>
         </form>
     </div>

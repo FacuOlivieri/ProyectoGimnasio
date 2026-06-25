@@ -1,6 +1,8 @@
 package com.proyecto.Gimnasio.controller;
 
 import com.proyecto.Gimnasio.dto.UsuarioDTO;
+import com.proyecto.Gimnasio.model.Cliente;
+import com.proyecto.Gimnasio.model.Usuario;
 import com.proyecto.Gimnasio.service.UsuarioService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +24,6 @@ public class UsuarioController {
         return "index";
     }
 
-    @GetMapping("/crearCuenta")
-    public String crearCuenta(){
-        return "registro";
-    }
 
     @PostMapping("/login")
     public String login(@RequestParam String emailIngresado,
@@ -53,13 +51,17 @@ public class UsuarioController {
     }
 
 
+    @GetMapping("/crearCuenta")
+    public String formularioRegistro(Model model){
+        model.addAttribute("usuario", new UsuarioDTO());
+        return "formularioRegistro";
+    }
 
-    @PostMapping("/registro")
-    public String crearUsuario(@RequestBody UsuarioDTO usuario,
-                               Model model){
 
+    @PostMapping("/registroUsuario")
+    public String crearUsuario(UsuarioDTO usuario){
         usuarioService.crearUsuario(usuario);
-        return "login";
+        return "redirect:/login";
     }
 
 
